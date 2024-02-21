@@ -1,6 +1,9 @@
 package com.school.billingservice.controller;
 
+import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
+import org.skyscreamer.jsonassert.JSONAssert;
+import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.ClassPathResource;
@@ -24,12 +27,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 })
 public class BillingControllerIT {
 
+    private final RestTemplate restTemplate = new RestTemplate();
     @Value("${local.server.port}")
     private int port;
 
-    private final RestTemplate restTemplate = new RestTemplate();
-
     @Test
+    @SneakyThrows
     public void shouldReturnAReportForASchool() {
         // Given
         String url = "http://localhost:" + port + "/api/billings/schools/2?year=2024&month=1";
@@ -39,10 +42,12 @@ public class BillingControllerIT {
 
         // Then
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(responseEntity.getBody()).isEqualTo(getFileContent("school-report.json"));
+        JSONAssert.assertEquals(responseEntity.getBody(), getFileContent("school-report.json"),
+                JSONCompareMode.STRICT);
     }
 
     @Test
+    @SneakyThrows
     public void shouldReturnAReportForParent() {
         // Given
         String url = "http://localhost:" + port + "/api/billings/schools/1/parents/100?year=2024&month=1";
@@ -52,7 +57,8 @@ public class BillingControllerIT {
 
         // Then
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(responseEntity.getBody()).isEqualTo(getFileContent("parent-report.json"));
+        JSONAssert.assertEquals(responseEntity.getBody(), getFileContent("parent-report.json"),
+                JSONCompareMode.STRICT);
     }
 
     @Test

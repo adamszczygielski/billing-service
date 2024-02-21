@@ -1,1 +1,55 @@
-{"schoolName":"School No. 2","parentReportDtos":[{"parentFirstName":"Janusz","parentLastName":"Kowalski","overallHours":10,"billableHours":6,"price":23.94,"childReportDtos":[{"childFirstName":"Heniek","childLastName":"Kowalski","overallHours":10,"billableHours":6,"price":23.94,"attendanceReportDtos":[{"entryDate":"2024-01-01T05:00:00","exitDate":"2024-01-01T14:00:00","overallHours":10,"billableHours":6,"price":23.94}]}]},{"parentFirstName":"Grażyna","parentLastName":"Nowak","overallHours":10,"billableHours":6,"price":23.94,"childReportDtos":[{"childFirstName":"Mietek","childLastName":"Nowak","overallHours":10,"billableHours":6,"price":23.94,"attendanceReportDtos":[{"entryDate":"2024-01-01T05:00:00","exitDate":"2024-01-01T14:00:00","overallHours":10,"billableHours":6,"price":23.94}]}]}]}
+{
+  "schoolName": "School No. 2",
+  "parentReportDtos": [
+    {
+      "parentFirstName": "Janusz",
+      "parentLastName": "Kowalski",
+      "overallHours": 10,
+      "billableHours": 6,
+      "price": 23.94,
+      "childReportDtos": [
+        {
+          "childFirstName": "Heniek",
+          "childLastName": "Kowalski",
+          "overallHours": 10,
+          "billableHours": 6,
+          "price": 23.94,
+          "attendanceReportDtos": [
+            {
+              "entryDate": "2024-01-01T05:00:00",
+              "exitDate": "2024-01-01T14:00:00",
+              "overallHours": 10,
+              "billableHours": 6,
+              "price": 23.94
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "parentFirstName": "Grażyna",
+      "parentLastName": "Nowak",
+      "overallHours": 10,
+      "billableHours": 6,
+      "price": 23.94,
+      "childReportDtos": [
+        {
+          "childFirstName": "Mietek",
+          "childLastName": "Nowak",
+          "overallHours": 10,
+          "billableHours": 6,
+          "price": 23.94,
+          "attendanceReportDtos": [
+            {
+              "entryDate": "2024-01-01T05:00:00",
+              "exitDate": "2024-01-01T14:00:00",
+              "overallHours": 10,
+              "billableHours": 6,
+              "price": 23.94
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
